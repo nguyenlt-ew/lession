@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
     selector:'lt-tutorial',
@@ -7,13 +7,15 @@ import {Component} from '@angular/core';
 })
 
 export class TutorialComponent{
-    public title:string = "My Angular 2 tutorial binding";
-    public cone = true;
-    public ctwo = true;
-    public style = 'italic';
-    public size = "30px";
-    Toggle(){
-        this.cone = !this.cone;
-        this.ctwo = !this.ctwo;
+    public title:string = "This is child component";
+    @Input() name:string;
+    @Output() onVote = new EventEmitter<boolean>();
+    setName(name:string){
+        this.name = name;
+    }
+    public voted:boolean = false;
+    vote(agree:boolean){
+        this.voted = true;
+        this.onVote.emit(agree);
     }
 }
