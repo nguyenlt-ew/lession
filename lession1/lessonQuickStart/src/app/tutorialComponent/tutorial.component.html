@@ -1,5 +1,10 @@
 <h2>{{title}}</h2>
-<input type="text" [(ngModel)]="fname" />
-<input type="text" [(ngModel)]="lname" />
-<br>
-Full name: {{fname}} {{lname}}
+<h3 *ngIf="showLineIf">This is ngIf directive line</h3>
+<div [ngSwitch]="_color">
+    <p *ngSwitchCase="'red'">This line is red color</p>
+    <p *ngSwitchCase="'blue'">This line is blue color</p>
+    <p *ngSwitchCase="'yellow'">This line is yellow color</p>
+</div>
+<ul>
+    <li *ngFor="let color of colors">{{color}}</li>
+</ul>
