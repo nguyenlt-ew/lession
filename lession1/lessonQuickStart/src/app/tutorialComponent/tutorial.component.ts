@@ -8,7 +8,12 @@ import {Component} from '@angular/core';
 
 export class TutorialComponent{
     public title:string = "My Angular 2 tutorial binding";
-    public showLineIf:boolean = false;
-    public _color = 'yellow';
-    public colors = ['red', 'blue', 'yellow'];
+    public cone = true;
+    public ctwo = true;
+    public style = 'italic';
+    public size = "30px";
+    Toggle(){
+        this.cone = !this.cone;
+        this.ctwo = !this.ctwo;
+    }
 }
